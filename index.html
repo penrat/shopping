@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผู้ดูแลระบบ - จัดการสินค้าของที่ระลึก 30 ปี</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Sarabun', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .hover-lift { transition: transform 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <div class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-2">ระบบจัดการสินค้า</h1>
+                <p class="text-xl opacity-90">ของที่ระลึก 30 ปี สาขาวิทยาการคอมพิวเตอร์</p>
+                <div class="mt-4 bg-white/20 rounded-full px-4 py-2 inline-block">
+                    <span class="font-semibold">👨‍💼 ผู้ดูแลระบบ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Navigation -->
+        <div class="text-center mb-8">
+            <div class="inline-flex bg-white rounded-lg shadow-md p-1">
+                <button onclick="showSection('products')" id="productBtn" class="px-6 py-3 rounded-md bg-blue-500 text-white font-medium transition-all">
+                    📦 จัดการสินค้า
+                </button>
+                <a href="#customer-form" class="px-6 py-3 rounded-md text-gray-600 hover:bg-gray-100 font-medium transition-all">
+                    👥 ดูฟอร์มลูกค้า
+                </a>
+            </div>
+        </div>
+
+        <!-- Products Management Section -->
+        <div id="products-section" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- เสื้อ -->
+            <div class="bg-white rounded-xl card-shadow hover-lift p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <span class="text-2xl">👕</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">เสื้อที่ระลึก</h2>
+                </div>
+                
+                <form class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">สี</label>
+                            <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option>ขาว</option>
+                                <option>ดำ</option>
+                                <option>น้ำเงิน</option>
+                                <option>แดง</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">ขนาด</label>
+                            <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XXL</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">รูปภาพสินค้า</label>
+                        <input type="file" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">ราคา (บาท)</label>
+                        <input type="number" placeholder="399" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">จำนวนในสต็อก</label>
+                        <input type="number" placeholder="100" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors">
+                        เพิ่มสินค้า
+                    </button>
+                </form>
+            </div>
+
+            <!-- กระเป๋า -->
+            <div class="bg-white rounded-xl card-shadow hover-lift p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <span class="text-2xl">🎒</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">กระเป๋า</h2>
+                </div>
+                
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">ประเภท</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option>กระเป๋าสะพายหลัง</option>
+                            <option>กระเป๋าสะพายข้าง</option>
+                            <option>กระเป๋าถือ</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">สี</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option>ดำ</option>
+                            <option>น้ำเงินเข้ม</option>
+                            <option>เทา</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">รูปภาพสินค้า</label>
+                        <input type="file" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">ราคา (บาท)</label>
+                        <input type="number" placeholder="599" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">จำนวนในสต็อก</label>
+                        <input type="number" placeholder="50" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-colors">
+                        เพิ่มสินค้า
+                    </button>
+                </form>
+            </div>
+
+            <!-- แก้ว -->
+            <div class="bg-white rounded-xl card-shadow hover-lift p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                        <span class="text-2xl">☕</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">แก้ว</h2>
+                </div>
+                
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">ประเภท</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <option>แก้วกาแฟ</option>
+                            <option>แก้วน้ำ</option>
+                            <option>แก้วสแตนเลส</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">ขนาด</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <option>350 ml</option>
+                            <option>500 ml</option>
+                            <option>750 ml</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">รูปภาพสินค้า</label>
+                        <input type="file" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">ราคา (บาท)</label>
+                        <input type="number" placeholder="199" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">จำนวนในสต็อก</label>
+                        <input type="number" placeholder="75" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 rounded-lg transition-colors">
+                        เพิ่มสินค้า
+                    </button>
+                </form>
+            </div>
+
+            <!-- ของใช้อื่นๆ -->
+            <div class="bg-white rounded-xl card-shadow hover-lift p-6">
+                <div class="flex items-center mb-4">
+                    <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                        <span class="text-2xl">🎁</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">ของใช้อื่นๆ</h2>
+                </div>
+                
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">ประเภทสินค้า</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                            <option>หมวก</option>
+                            <option>ร่ม</option>
+                            <option>เข็มกลัด</option>
+                            <option>สมุด</option>
+                            <option>ปากกา</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">รายละเอียดเพิ่มเติม</label>
+                        <textarea rows="3" placeholder="สี, ขนาด, หรือคุณสมบัติพิเศษ" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">รูปภาพสินค้า</label>
+                        <input type="file" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">ราคา (บาท)</label>
+                        <input type="number" placeholder="150" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">จำนวนในสต็อก</label>
+                        <input type="number" placeholder="30" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-lg transition-colors">
+                        เพิ่มสินค้า
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Link to Customer Form -->
+        <div id="customer-form" class="mt-12 text-center">
+            <div class="bg-white rounded-xl card-shadow p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">📋 ฟอร์มสำหรับลูกค้า</h3>
+                <p class="text-gray-600 mb-6">ลูกค้าสามารถสั่งซื้อสินค้าผ่านฟอร์มแยกต่างหาก</p>
+                <a href="about.html" onclick="showCustomerForm()" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+                    ไปที่ฟอร์มลูกค้า →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            // Simple function to highlight active section
+            document.getElementById('productBtn').classList.add('bg-blue-500', 'text-white');
+        }
+
+        function showCustomerForm() {
+            alert('ไปที่ฟอร์มลูกค้า');
+            // In real implementation, this would redirect to customer form page
+        }
+    </script>
+</body>
+</html>
